@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/main/resources/db/migration/V1__init-mysql-database.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/main/resources/db/migration/V2__add-email.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/scripts/mysql-init.sql" dialect="MySQL" />
+  </component>
+</project>
