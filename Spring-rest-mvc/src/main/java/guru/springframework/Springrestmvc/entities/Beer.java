@@ -28,7 +28,6 @@ public class Beer {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @JdbcTypeCode(SqlTypes.CHAR)
     @Column(length = 36, columnDefinition = "varchar(36)" , updatable = false, nullable = false)
-
     private UUID id;
 
     @Version
@@ -40,8 +39,8 @@ public class Beer {
     @Column(length = 50)
     private String beerName;
 
-    @Column(length = 255)
-    private String email;
+    //@Column(length = 255)
+    //private String email;
 
     @NotNull
     private BeerStyle beerStyle;

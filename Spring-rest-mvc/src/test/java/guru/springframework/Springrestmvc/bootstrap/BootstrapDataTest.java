@@ -10,10 +10,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-@Import(BeerCsvServiceImpl.class)
+
 @DataJpaTest
+@Import(BeerCsvServiceImpl.class)
 class BootstrapDataTest {
 
     @Autowired
@@ -29,6 +29,7 @@ class BootstrapDataTest {
     void setUp(){
         bootstrapData = new BootstrapData(beerRepository,csvService);
     }
+
     @Test
     void run() throws Exception {
 

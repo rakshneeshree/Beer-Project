@@ -2,6 +2,6 @@ package guru.springframework.Springrestmvc.model;
 
 public enum BeerStyle {
 
-     IPA, PALE_ALE, ALE, PILSNER, PORTER, LAGER, STOUT, SAISON, WHEAT;
+     LAGER, PILSNER, STOUT, GOSE, PORTER, ALE, WHEAT, IPA, PALE_ALE, SAISON
 
 }
