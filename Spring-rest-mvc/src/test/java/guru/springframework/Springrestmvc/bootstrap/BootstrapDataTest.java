@@ -1,6 +1,7 @@
 package guru.springframework.Springrestmvc.bootstrap;
 
 import guru.springframework.Springrestmvc.repositories.BeerRepository;
+import guru.springframework.Springrestmvc.repositories.CustomerRepository;
 import guru.springframework.Springrestmvc.services.BeerCsvService;
 import guru.springframework.Springrestmvc.services.BeerCsvServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,6 +18,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 class BootstrapDataTest {
 
     @Autowired
+    CustomerRepository customerRepository;
+
+    @Autowired
     BeerRepository beerRepository;
 
     @Autowired
@@ -27,7 +31,7 @@ class BootstrapDataTest {
 
     @BeforeEach
     void setUp(){
-        bootstrapData = new BootstrapData(beerRepository,csvService);
+        bootstrapData = new BootstrapData(beerRepository,csvService,customerRepository);
     }
 
     @Test
@@ -36,5 +40,7 @@ class BootstrapDataTest {
         bootstrapData.run(null);
 
         assertThat(beerRepository.count()).isEqualTo(2413);
+        assertThat(customerRepository.count()).isEqualTo(2);
+
     }
 }

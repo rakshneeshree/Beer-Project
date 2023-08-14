@@ -1,9 +1,11 @@
 package guru.springframework.Springrestmvc.bootstrap;
 
 import guru.springframework.Springrestmvc.entities.Beer;
+import guru.springframework.Springrestmvc.entities.Customer;
 import guru.springframework.Springrestmvc.model.BeerCSVRecord;
 import guru.springframework.Springrestmvc.model.BeerStyle;
 import guru.springframework.Springrestmvc.repositories.BeerRepository;
+import guru.springframework.Springrestmvc.repositories.CustomerRepository;
 import guru.springframework.Springrestmvc.services.BeerCsvService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -26,12 +28,37 @@ public class BootstrapData implements CommandLineRunner {
 
     private final BeerRepository beerRepository;
     private final BeerCsvService beerCsvService;
+    private final CustomerRepository customerRepository;
 
     @Transactional
     @Override
     public void run(String... args) throws Exception {
         loadBeerData();
         loadCsvData();
+        loadCustomerData();
+    }
+
+    private void loadCustomerData() {
+
+        if (customerRepository.count() == 0) {
+            Customer cust1 = Customer.builder()
+                    .id(UUID.randomUUID())
+                    .customername("Rakshnee ")
+                    .version(1)
+                    .createddate(LocalDateTime.now())
+                    .lastmodifieddate(LocalDateTime.now())
+                    .build();
+
+            Customer cust2 = Customer.builder()
+                    .id(UUID.randomUUID())
+                    .customername("John")
+                    .version(1)
+                    .createddate(LocalDateTime.now())
+                    .lastmodifieddate(LocalDateTime.now())
+                    .build();
+
+            customerRepository.saveAll(Arrays.asList(cust2, cust1));
+        }
     }
 
     private void loadCsvData() throws FileNotFoundException {
