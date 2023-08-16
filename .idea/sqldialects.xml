@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/main/resources/db/migration/V1__init-mysql-database.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/main/resources/db/migration/V2__add-email.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/main/resources/db/migration/V3__add-order-tables.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/main/resources/db/migration/V4__category.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/main/resources/db/migration/V5__order-shipment.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/scripts/add-order-tables.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Spring-rest-mvc/src/scripts/mysql-init.sql" dialect="MySQL" />
   </component>
